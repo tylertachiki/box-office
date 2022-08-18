@@ -32,9 +32,15 @@ export default function Starred() {
 
   return (
     <MainPageLayout>
-      {isLoading && <div>Shows are still Loading</div>}{' '}
-      {error && <div>Error occurred: {error}</div>}
-      {!isLoading && !shows && <div>No shows in starred</div>}
+      {isLoading && (
+        <div style={{ 'text-align': 'center' }}>Shows are still Loading</div>
+      )}{' '}
+      {error && (
+        <div style={{ 'text-align': 'center' }}>Error occurred: {error}</div>
+      )}
+      {!isLoading && !shows && (
+        <div style={{ 'text-align': 'center' }}>No shows in starred</div>
+      )}
       {!isLoading && !error && shows && <ShowGrid data={shows} />}
     </MainPageLayout>
   );
